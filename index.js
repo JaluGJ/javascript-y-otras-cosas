@@ -194,7 +194,6 @@ console.log(saludo("Juan Carlos", "mitre 1234", "+ 54 9 3698217", 1256315, 12352
 console.log(saludo2("Juan Carlos", "mitre 1234", "+ 54 9 3698217", 1256315, 123523))
 
 
-teLoExplicoEnCriollo(Github)
 
 
 

@@ -53,6 +53,7 @@ export default function Cards({ elements = [{id:1, name:"a"},{id:2, name: "b"}]}
 
   return (
     <div>
+      Actualmente hay {elements.length}
       {elements.map(item => <Card item={item} />)}
     </div>
   )
