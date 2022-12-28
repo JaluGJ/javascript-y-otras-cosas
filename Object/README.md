@@ -89,4 +89,5 @@ let macumba = {lazos: "familiares", atar:"novio" , velas:"foto"}
 macumba.hasOwnProperty("lazos") // --> true
 macumba.hasOwnProperty("familiares") // --> false
 ```
+
  Y hasta acá los metodos de objetos. Nuevamente te recomiendo revisar, en caso de ser necesario, los metodo en MDN
