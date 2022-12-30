@@ -13,5 +13,5 @@
     - [_.catch()_](./Promesas.md/#catch ".atrapar()")
     - [_.finally()_](./Promesas.md/#finally ".finalmente()")
     - [_Promise.all_](./Promesas.md/#promiseall)
-  -[Async-Await](Promesas.md/#async-await)
--[Request](./Request.md)
+  - [Async-Await](Promesas.md/#async-await)  
+- [Request](./Request.md)
