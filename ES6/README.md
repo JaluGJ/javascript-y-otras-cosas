@@ -17,8 +17,8 @@ Podes ver la documentación [aquí](http://es6-features.org/#Constants)
 
 ## Arrow Function 
 
-<details>
-<summary> </summary>
+<!-- <details>
+<summary> </summary> -->
 
 Una **arrow function** es una función como las otras, que, si está escrito en una sola linea, tiene el "return" implícito.  
 _¿Qué significa que tenga el `return` implicito?_ A lo que refiere tener el `return` implicito es que no es necesario escribir un return para que devuelva algo. Simplemente va a devolver todo aquello que esté en la linea respectiva.  
@@ -70,41 +70,42 @@ arg => {
 
 Muchas veces, las **arrow function** se utilizan con un `const` o `let` para definir sus nombres de función, pero no siempre es necesario, menos aun en las IIFE (Immediately Invoked Function Expression) o, en español EFEI (Expresion de funcion ejecutada inmediatamente) ___[MDN IIFE](https://developer.mozilla.org/es/docs/Glossary/IIFE)___
 
-</details>
+<!-- </details> -->
 
 ## Spread Operator
 
-<details>
-<summary></summary>
-</details>
+<!-- <details>
+<summary></summary> -->
+<!-- </details> -->
 
 
 ## Class Constructor
 
-<details>
-<summary></summary>
-</details>
+<!-- <details>
+<summary></summary> -->
+<!-- </details> -->
 
 ## Destructuring
 
-<details>
-<summary></summary>
-</details>
+<!-- <details>
+<summary></summary> -->
+<!-- </details> -->
 
 ## Backtick
 
-<details>
-<summary></summary>
-</details>
+<!-- <details>
+<summary></summary> -->
+<!-- </details> -->
 
 ## Object Construction
 
-<details>
-<summary></summary>
-</details>
+<!-- <details>
+<summary></summary> -->
+<!-- </details> -->
 
 ## Export-Import
 
-<details>
-<summary></summary>
-</details>
+<!--<details>
+<summary></summary> -->
+
+<!--</details> -->
