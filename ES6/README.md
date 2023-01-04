@@ -89,6 +89,8 @@ Muchas veces, las **arrow function** se utilizan con un `const` o `let` para def
 
 <!-- <details>
 <summary></summary> -->
+
+<!-- Esto para explicar la proxima clase -->
 <!-- </details> -->
 
 ## Backtick
@@ -107,5 +109,161 @@ Muchas veces, las **arrow function** se utilizan con un `const` o `let` para def
 
 <!--<details>
 <summary></summary> -->
+
+>_Y que export-import que es tan sencillo segun yo JAJA._
+
+Vamos por el comienzo:
+
+### ___module.exports - require___
+
+En resumen, para lo que se utiliza es poder acceder a funciones y otras cosas desde distintos archivos y carpetas _(Aqui comienza la introducción a "infraestructura")_. Esto permite que el codigo sea mantenible y escalable. 
+Si te preguntás cómo funciona, es simple. Lo que hace es una especie de "copy-paste", hacia la linea de codigo en donde es requerida. 
+
+Las funciones pueden ser exportadas como una funcion "default" donde el archivo en donde esta, es la UNICA función presente, o es la unica que se necesita del mismo.  
+Es decir, en el archivo `rojas.js` tenés una funcion sola, que se llama `jorge`, y solo tenes esa función y nada mas que esa función, PERO la requeris desde algún lugar. En vez de meterla en el objeto del module.exports, podes simplemente decir que el archivo es la función, del siguiente modo:  
+
+```js
+//rojas.js
+function jorge (cancion){
+  return `canto ${cancion}`
+}
+
+module.exports = jorge
+```
+
+Lo que va a probocar esto es que no necesites hacer un _destructuring_ de la función cuando sea requerida en otro archivo. 
+
+```js
+//tolueno.js
+const jorge = require("./rojas.js") //No se requiere destructuring
+
+module.exports = function tolueno (cancion){
+  console.log(`intoxicamos con tolueno a jorge porque ${jorge(cancion)}`)
+}
+```
+
+En este segundo caso, es la **SEGUNDA** forma de exportar un funcion por defecto. Lo que se hace es escribir la funcion directamente en el `module.exports`.
+
+Cuando se quieren exportar varias funciones desde archivo js (que, o no fue bien modularizado, o no era necesario modularizar) siempre se tiene que mandar un objeto con TODAS las funciones. Antes de ES6 que facilitó el envio de objetos. resultaba mas sencillo hacer el envio de las funciones del siguiente modo _(disclaimer: es el modo que mas me gusta a mí)_  
+
+```js
+//alifaticos.js
+/*al comienzo del archivo, los require necesarios*/
+
+module.exports = {
+  metanos: function (inerte){
+    return `CH3-${inerte}`
+  },
+  etanos: function (inerte) {
+    return `CH3-CH2-${inerte}`
+  },
+  ...
+}
+```
+Esta forma, antes de ES6, era mucho mas facil que estar escribiendo el nombre de la función repetidamente y crear funciones antes para luego trabajarlas. _(ejemplo a continuación)_
+
+```js
+//alifaticos.js
+/*al comienzo del archivo, los require necesarios*/
+function metanos (inerte){
+    return `CH3-${inerte}`
+  }
+
+function etanos(inerte) {
+    return `CH3-CH2-${inerte}`
+  }
+...
+
+module.exports = { 
+  metanos: metanos,
+  etanos: etanos,
+  ...
+}
+```
+
+Con EC6, ademas de llegar el export-import que facilita un monton las cosas, También se puede hacer del mismo modo lo anterior. sin repetir tanto los nombres , y las funciones ser arrow functions.
+
+***CASO A***
+```js
+module.exports = {
+  metanos: (inerte) => {
+    return `CH3-${inerte}`
+  },
+  etanos: (inerte) => {
+    return `CH3-CH2-${inerte}`
+  },
+  ...
+}
+```
+
+***CASO B***
+
+```js
+//alifaticos.js
+/*al comienzo del archivo, los require necesarios*/
+function metanos (inerte){
+    return `CH3-${inerte}`
+  }
+
+function etanos(inerte) {
+    return `CH3-CH2-${inerte}`
+  }
+...
+
+module.exports = { 
+  metanos,
+  etanos,
+  ...
+}
+```
+> A ver... se acorta minimamente, pero se acorta. SIN EMBARGO se puede hacer con la mejora que trae ES6, que es el import-export.  
+
+_¿Qué demonios cambia con el export import? (te estarás preguntando)_
+
+Pues, que no hay que escribir tanto tampoco. es una mezcla semi-perfecta entre lo que me gusta y lo que no me gusta. JAJAJAJAJAJ, pero, siendo realista, tambien mejora mucho la eficiencia.
+
+Como se usa?, pues, aquí un par de ejemplos
+
+***Para la exportacion "default"***
+```js
+export default function matanga (dijo){
+  return "la changa"
+}
+```
+
+***Para el export NO "default" y con varias funciones dentro del archivo***
+```js
+export function sarigueya (nombre){
+  return `a la grande le puse ${nombre}`
+}
+const algo = () => {return "algo"}
+export algo
+
+export function homero (bebida){
+  return `HOMERO ${bebida}` 
+}
+```
+
+Podes utilizar cualquiera de estas dos formas para escribir las exportaciones. 
+Ahora, lo que respecta a importaciones es MUY similar al require, pero mas comodo y LEGIBLE. _por sobre todo legible_
+
+***Caso import de un "export default"***
+
+```js
+import matanga from "./matanga"
+
+console.log(matanga("algo"))
+```
+
+***Caso import de un "no default"***
+
+```js
+import {sarigueya, algo, homero} from "./simpsons"
+
+console.log(sarigueya("Cuca"))
+console.log(algo())
+console.log(homero("cerveza"))
+```
+
 
 <!--</details> -->
