@@ -90,7 +90,8 @@ Muchas veces, las **arrow function** se utilizan con un `const` o `let` para def
 <!-- <details>
 <summary></summary> -->
 
-<!-- Esto para explicar la proxima clase -->
+<!-- Esto para explicar la proxima clase y local Storage!!!!! -->
+
 <!-- </details> -->
 
 ## Backtick
